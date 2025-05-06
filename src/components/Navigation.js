@@ -77,9 +77,10 @@ function Navigation() {
   const [open, setOpen] = useState(false);
   return (
     <NavBar>
-      <Logo>
-        <Link to="/">اكتشف العلا</Link>
-      </Logo>
+    <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+    <img src="/logo.jpeg" alt="اكتشف العلا" style={{ height: '40px' }} />
+    <span>اكتشف العلا</span>
+  </Link>
       <MobileIcon onClick={() => setOpen(!open)}>
         {open ? <FaTimes /> : <FaBars />}
       </MobileIcon>
