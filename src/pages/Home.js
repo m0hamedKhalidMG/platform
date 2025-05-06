@@ -1,5 +1,5 @@
 // src/pages/Home.js
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import {
@@ -10,6 +10,8 @@ import {
   FiBarChart2,
   FiFileText,
   FiInfo,
+  FiActivity,
+  FiX,
 } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
@@ -19,7 +21,10 @@ const features = [
   { to: '/podcasts', icon: <FiMic />, label: 'بودكاست' },
   { to: '/maps', icon: <FiMapPin />, label: 'خرائط' },
   { to: '/infographics', icon: <FiBarChart2 />, label: 'إنفوجرافيك' },
+  { to: '/Manualsc', icon: <FiActivity />, label: 'تجارب المؤثرين ' },
+
   { to: '/interviews', icon: <FiVideo />, label: 'مقابلات' },
+  
   { to: '/about', icon: <FiInfo />, label: 'عن المنصة' },
 ];
 
@@ -65,6 +70,34 @@ const MainButton = styled(Link)`
   transition: background 0.2s;
   &:hover {
     background: #a67b5b;
+  }
+`;
+
+const MessageBox = styled.div`
+  background: #fff8f0;
+  color: #2c3e50;
+  padding: 30px 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 1rem;
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  cursor: pointer;
+  &:hover {
+    color: #c0392b;
   }
 `;
 
@@ -115,6 +148,8 @@ const CardLabel = styled.span`
 `;
 
 function Home() {
+  const [showMessage, setShowMessage] = useState(true);
+
   return (
     <>
       <HeroSection>
@@ -126,6 +161,21 @@ function Home() {
           <MainButton to="/maps">ابدأ من هنا</MainButton>
         </HeroContent>
       </HeroSection>
+
+      {showMessage && (
+        <MessageBox>
+          <CloseButton onClick={() => setShowMessage(false)}>
+            <FiX />
+          </CloseButton>
+          <p>
+            مرحبًا بك في منصّة اكتشف العلا لاستكشاف محافظة العُلا، جوهرة التاريخ والطبيعة في قلب المملكة.
+            <br />
+            نأخذك هنا في رحلة فريدة بين حضارات ضاربة في القدم، وتجارب سياحية، وثقافية، وتعليمية، تُمكّنك من رؤية العلا كما لم ترها من قبل.
+            <br />
+            ابدأ رحلتك الآن، واستعد لاكتشاف كنوز العُلا!
+          </p>
+        </MessageBox>
+      )}
 
       <ContentSection>
         <SectionTitle>وجهاتنا</SectionTitle>
