@@ -62,7 +62,7 @@ function Manuals() {
             <Title>{m.title}</Title>
             <Description>{m.description}</Description>
             <Download href={m.fileUrl} target="_blank" rel="noreferrer">
-              تحميل
+              زيارة المصدر
             </Download>
           </Card>
         ))}
