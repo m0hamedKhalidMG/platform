@@ -20,7 +20,6 @@ const features = [
   { to: '/maps', icon: <FiMapPin />, label: 'خرائط' },
   { to: '/infographics', icon: <FiBarChart2 />, label: 'إنفوجرافيك' },
   { to: '/interviews', icon: <FiVideo />, label: 'مقابلات' },
-  { to: '/reports', icon: <FiFileText />, label: 'تقارير' },
   { to: '/about', icon: <FiInfo />, label: 'عن المنصة' },
 ];
 
