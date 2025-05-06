@@ -16,6 +16,7 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Videos from './pages/Videos.js';
 import About from './pages/About.js';
+import Manualsc from './pages/Manuals copy.js';
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
         <Route path="/other" element={<OtherContent />} />
         <Route path="/videos" element={<Videos />} />
         <Route path="/about" element={<About />} />
+        <Route path="/Manualsc" element={<Manualsc />} />
+
       </Routes>
       <Footer />
     </>
